@@ -6,9 +6,13 @@ export default class CSVReader2 extends Component {
     const data_list = data.map((row) => row.data);
     const json_data = JSON.stringify(data_list);
     fetch(
-        'https://localhost/api/scheduler>',
+        'http://localhost:3033/api/schedule',
         {
             method: 'POST',
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json"
+            },
             body: json_data,
         }
     )
