@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { CSVReader } from 'react-papaparse';
+import '../styles/uploadFile.css'
 
 export default class CSVReader2 extends Component {
   handleOnDrop = (data) => {
@@ -37,19 +38,17 @@ export default class CSVReader2 extends Component {
 
   render() {
     return (
-      <>
-        <h5>Click and Drag Upload</h5>
+      <footer>
         <CSVReader
           onDrop={this.handleOnDrop}
           onError={this.handleOnError}
           addRemoveButton
-          style={{'color' : "#f5f5f5"}}
           onRemoveFile={this.handleOnRemoveFile}
           config={{header: true}}
         >
           <span>Drop CSV file here or click to upload.</span>
         </CSVReader>
-      </>
+      </footer>
     );
   }
 }
