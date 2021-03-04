@@ -17,7 +17,7 @@ const Page = () => {
 
   const [collapsed, setCollapse] = useState(false);
   const onCollapse = (collapsed) => (setCollapse(collapsed));
-
+    const [resSchedule, setResSchedule] = useState([]);
     return (
       <Layout style={{ minHeight: '100vh' }}>
         <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
@@ -43,9 +43,9 @@ const Page = () => {
            {/*<Header className="site-layout-background" style={{ padding: 0 }} />*/}
           <Content>
              <Row>
-                <Col span={20}> <TableSchedule/></Col>
+                <Col span={20}> <TableSchedule resSchedule={resSchedule}/></Col>
                 <Col span={4}>
-                        <Row className='charts'><CSVReader2/></Row>
+                        <Row className='charts'><CSVReader2 setResSchedule={setResSchedule}/></Row>
                         <Row className='charts'></Row>
                         <Row className='charts'></Row>
                 </Col>
